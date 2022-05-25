@@ -6,29 +6,27 @@ import {shorten} from '../../helpers/functions/shorten/shorten'
 const CartProduct = ({ productData }) => {
   const { state, dispatch } = useContext(CartContext);
   return (
-    <div className="row my-5 py-4 border bg-white rounded d-flex flew-row flex-wrap align-items-center">
+    <div className="row my-5 py-4 border bg-white rounded d-flex flex-row flex-wrap align-items-center">
       <img
         src={productData.image}
-        className="col-12 col-sm-2 d-flex flew-row flex-wrap justify-content-center mx-auto"
+        className="col-12 col-sm-2 d-flex flex-row flex-wrap justify-content-center mx-auto"
       />
-      <h4 className="col-12 col-sm-4 py-3 mx-auto col-md-4 d-flex flew-row flex-wrap justify-content-center text-primary">
+      <h4 className="col-12 col-sm-4 py-3 mx-auto col-md-4 d-flex flex-row flex-wrap justify-content-center text-primary">
         {shorten(productData.title)}
       </h4>
-      <div className="col-6 col-sm-1 d-flex flew-row flex-wrap justify-content-center mx-auto">
-        <Button variant="success" className="col-auto">
+      <div className="col-12 col-sm-2 d-flex flex-row flex-wrap justify-content-center mx-auto">
+      <Button variant="success" className="col-auto m-1">
           <h6 className="my-0">{productData.price} $</h6>
         </Button>
-      </div>
-      <div className="col-6 col-sm-1 d-flex flew-row flex-wrap justify-content-center mx-auto">
-        <Button variant="warning">
+        <Button variant="warning" className="col-auto m-1">
           <h6 className="my-0">{productData.quantity}</h6>
         </Button>
       </div>
-      <div className="col-12 col-sm-4 d-flex flew-row flex-wrap justify-content-center mx-auto">
+      <div className="col-12 col-sm-4 d-flex flex-row flex-wrap justify-content-center mx-auto">
         {quantity(state, productData) >= 1 && (
           <Button
             variant="success"
-            className="m-2"
+            className="col-6 col-sm-auto m-2"
             onClick={() => dispatch({ type: "INCREASE", payLoad: productData })}
           >
             Increase
@@ -37,7 +35,7 @@ const CartProduct = ({ productData }) => {
         {quantity(state, productData) == 1 && (
           <Button
             variant="danger"
-            className="m-2"
+            className="col-6 col-sm-auto m-2"
             onClick={() =>
               dispatch({ type: "REMOVE_PRODUCT", payLoad: productData })
             }

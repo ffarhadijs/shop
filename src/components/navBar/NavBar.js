@@ -10,12 +10,15 @@ const NavBar = () => {
       <Link to="/" className="text-decoration-none mx-3">
         <p className="fs-5 text-body">Products</p>
       </Link>
-      <h1 className="mx-auto"> Fake Store</h1>
-      {state.selectedProducts.length?
-      <Link to="/cart" className="text-decoration-none mx-3">
-        <img src={shopping} />
-        <span className="text-body">{state.totalProducts}</span>
-      </Link>:null}
+      <h1 className="text-center"> Fake Store</h1>
+      {state.selectedProducts.length ? (
+        <Link to="/cart" className="text-decoration-none mx-3">
+          <img src={shopping} alt='shop basket'/>
+          <span className="text-body">{state.totalProducts}</span>
+        </Link>
+      ) : (
+        <img className="mx-3" src={shopping} alt='shop basket'/>
+      )}
     </div>
   );
 };

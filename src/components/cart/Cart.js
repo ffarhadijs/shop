@@ -1,8 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext} from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../contexts/cartContextProvider/CartContextProvider";
 import CartProduct from "../cartProduct/CartProduct";
-import { Button, Modal } from "react-bootstrap";
+import { Button} from "react-bootstrap";
 import { ModalContext } from "../../contexts/modalContextProvider/ModalContextProvider";
 import NavBar from "../navBar/NavBar";
 
@@ -13,14 +13,14 @@ const Cart = (props) => {
   return (
     <>
       <NavBar />
-      <div className="container-fluid bg-light">
-        <div className="d-flex flex-row flex-wrap justify-content-center">
-          <div className="col-10 col-sm-8 mx-3">
+      <div className="container-fluid pb-xl-5">
+        <div className="d-flex flex-row flex-wrap justify-content-centerp">
+          <div className="col-10 col-lg-8 mx-3">
             {state.selectedProducts.map((product) => (
               <CartProduct key={product.id} productData={product} />
             ))}
           </div>
-          <div className="col-10 col-sm-3 border rounded align-self-baseline my-5 mx-3 p-4 bg-white">
+          <div className="col-10 col-lg-3 border rounded align-self-baseline my-5 mx-3 p-4 bg-white">
             <p>
               <span className="text-primary fw-bold">Total price:</span>{" "}
               {state.totalPrice.toFixed(2)} $
@@ -29,11 +29,11 @@ const Cart = (props) => {
               <span className="text-primary fw-bold">Total Products:</span>{" "}
               {state.totalProducts}
             </p>
-            <div className="d-flex flew-row flex-wrap justify-content-between mx-auto">
+            <div className="d-flex flex-row flex-wrap justify-content-between mx-auto">
               <Link to="/login">
                 <Button
                   variant="primary"
-                  className="mx-auto my-2"
+                  className="my-2"
                   onClick={() => dispatch({ type: "CHECKOUT" })}
                 >
                   Check out
@@ -41,7 +41,7 @@ const Cart = (props) => {
               </Link>
               <Button
                 variant="outline-primary"
-                className="mx-auto my-2"
+                className="my-2"
                 onClick={() => setShow(true)}
               >
                 clear

@@ -1,89 +1,97 @@
 /*---------------- product -------------------*/
-.product{
-    border-radius: 10px;
-    transition: all 0.5s;
+.product {
+  border-radius: 10px;
+  transition: all 0.5s;
 }
-.product:hover{
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+.product:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.productImg{
-    width: 90%;
-    height: 200px;
+.productImg {
+  width: 90%;
+  height: 200px;
 }
-.producttext{
-    font-size: 18px;
-    height: 60px;
+.producttext {
+  font-size: 18px;
+  height: 60px;
 }
-
+.quantityBtn{
+    cursor:default;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 12px;
+}
+.quantityBtn:hover{
+    background-color: black;
+    color: white;
+}
 
 /*---------------- navbar -------------------*/
-.navbar{
-    height: 5rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+.navbar {
+  height: 5rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.navbar p:hover{
-    border-bottom: 1px solid black;
+.navbar p:hover {
+  border-bottom: 1px solid black;
 }
-
 
 /*---------------- detail -------------------*/
-.detail{
-    padding: 5rem 0;
+.detail {
+  padding: 5rem 0;
 }
-
 
 /*---------------- loader -------------------*/
-.loader{
-    width: 100%;
-    height: 100vh;
+.loader {
+  width: 100%;
+  height: 100vh;
 }
-.loader img{
-    width: 10%;
-    height: auto;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: translate(0,150%);
+.loader img {
+  width: 10%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translate(0, 150%);
 }
-
 
 /*---------------- 404 -------------------*/
-.notfound{
-    background:url(assets/bg.jpg) center center/cover;
-    width: 100%;
-    height: 100vh;
-    position: relative;
+.notfound {
+  background: url(assets/bg.jpg) center center/cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
 }
-.notfound::before{
-    background-color: rgba(0, 0, 0, 0.37);
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    width: 100%;
-  }
-.text{
-    margin: 0 auto;
-    border: 1px solid rgb(255, 252, 252);
-    width: 50%;
-    height: auto;
-    transform: translate(0,50%);
-    backdrop-filter: blur(5px);
+.notfound::before {
+  background-color: rgba(0, 0, 0, 0.37);
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }
-.notfound h1{
-    text-align: center;
-    font-size: 100px;
-    color: rgb(255, 255, 255);
-    font-family: 'Abril Fatface', cursive;
-    margin: 20px 0;
+.text {
+  margin: 0 auto;
+  border: 1px solid rgb(255, 252, 252);
+  width: 50%;
+  height: auto;
+  transform: translate(0, 50%);
+  backdrop-filter: blur(5px);
 }
-.notfound p{
-    color: white;
-    text-align: center;
+.notfound h1 {
+  text-align: center;
+  font-size: 100px;
+  color: rgb(255, 255, 255);
+  font-family: "Abril Fatface", cursive;
+  margin: 20px 0;
 }
-.notfound div div{
-    margin: 30px auto;
-    text-align: center;
+.notfound p {
+  color: white;
+  text-align: center;
 }
+.notfound div div {
+  margin: 30px auto;
+  text-align: center;
+}
+
+
