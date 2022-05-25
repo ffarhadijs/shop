@@ -28,7 +28,7 @@ const Login = () => {
           />
           <label for="floatingPassword">Password</label>
         </div>
-        <Button variant="primary" type="submit" className="my-5 col-1">
+        <Button variant="primary" type="submit" className="my-5 col-auto">
           login
         </Button>
       </form>
