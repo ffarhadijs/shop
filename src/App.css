@@ -1,7 +1,35 @@
+:root {
+  --background-color: #f8f9fa;
+  --second-background-color: white;
+  --text-color: black;
+}
+[data-theme="dark"] {
+  --background-color: rgb(41, 41, 41);
+  --second-background-color: rgb(27, 27, 27);
+  --text-color: white;
+}
+
+/*---------------- app -------------------*/
+
+.app {
+  background-color: var(--background-color);
+  padding: 0;
+  margin: 0;
+}
+
+/*---------------- store -------------------*/
+
+.store {
+  background-color: var(--background-color);
+}
+
 /*---------------- product -------------------*/
+
 .product {
   border-radius: 10px;
   transition: all 0.5s;
+  background-color: var(--second-background-color);
+  color: var(--text-color);
 }
 .product:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -14,32 +42,65 @@
   font-size: 18px;
   height: 60px;
 }
-.quantityBtn{
-    cursor:default;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 5px 12px;
+.quantityBtn {
+  cursor: default;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 12px;
 }
-.quantityBtn:hover{
-    background-color: black;
-    color: white;
+.quantityBtn:hover {
+  background-color: black;
+  color: white;
 }
 
 /*---------------- navbar -------------------*/
+
 .navbar {
   height: 5rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: var(--background-color);
+}
+.navbar p {
+  margin: 0;
+  color: var(--text-color);
+  display: inline;
+}
+.navbar i {
+  color: var(--text-color);
 }
 .navbar p:hover {
   border-bottom: 1px solid black;
 }
 
 /*---------------- detail -------------------*/
+
 .detail {
   padding: 5rem 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+.detailbox {
+  background-color: var(--second-background-color);
+}
+
+/*---------------- cart -------------------*/
+
+.cart {
+  background-color: var(--background-color);
+  padding: 3rem 0 11rem 0;
+}
+.cartbox {
+  background-color: var(--second-background-color);
+}
+.cartbox p {
+  color: var(--text-color);
+}
+.cartproduct {
+  background-color: var(--second-background-color);
 }
 
 /*---------------- loader -------------------*/
+
 .loader {
   width: 100%;
   height: 100vh;
@@ -56,6 +117,7 @@
 }
 
 /*---------------- 404 -------------------*/
+
 .notfound {
   background: url(assets/bg.jpg) center center/cover;
   width: 100%;
@@ -94,4 +156,90 @@
   text-align: center;
 }
 
+/*---------------- breadcrumb -------------------*/
 
+.breadcrumb {
+  background-color: #3d8afc;
+  padding: 6px;
+  margin: auto;
+}
+.breadcrumb .active {
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+}
+.breadcrumb a {
+  color: rgb(92, 92, 92);
+  font-weight: 500;
+}
+
+/*---------------- Dark Mode Toggle -------------------*/
+
+.darkmode {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  width: 120px;
+  height: auto;
+  z-index: 111;
+  background: rgba(0, 0, 0, 0.318);
+}
+
+.toggle-theme-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.toggle-theme-wrapper span {
+  font-size: 28px;
+}
+
+.toggle-theme {
+  position: relative;
+  display: inline-block;
+  height: 24px;
+  width: 50px;
+}
+
+.toggle-theme input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  position: absolute;
+  cursor: pointer;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: 0.2s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 16px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 16px;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+input:checked + .slider {
+  background-color: cornflowerblue;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

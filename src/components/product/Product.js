@@ -5,16 +5,20 @@ import { CartContext } from "../../contexts/cartContextProvider/CartContextProvi
 import { quantity } from "../../helpers/functions/quantity/quantity";
 import { shorten } from "../../helpers/functions/shorten/shorten";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
+
 
 const Product = ({ productData }) => {
   const { state, dispatch } = useContext(CartContext);
   return (
-    <div className="product bg-white p-3 col-5 col-md-3 col-lg-2 m-2 ">
+    <div className="product p-3 col-5 col-md-3 col-lg-2 m-2 ">
       <div className="d-flex justify-content-center align-items-center">
-        <img
+        <LazyLoadImage
           className="productImg my-3 "
           src={productData.image}
           alt={`product${productData.id}`}
+          effect="blur"
         />
       </div>
       <p className="producttext fw-bold font-monospace">

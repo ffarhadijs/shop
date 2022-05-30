@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import Loader from "../../components/loader/Loader";
+
 import { getApi } from "../../services/api/Api";
 export const ProductsContext = createContext();
 
@@ -17,7 +18,6 @@ const ProductContextProvider = (props) => {
       {product.length?<ProductsContext.Provider value={product}>
       {props.children}
     </ProductsContext.Provider>:<Loader/>}
-   
     </div>
   );
 };

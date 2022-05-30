@@ -1,11 +1,19 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import NavBar from "../navBar/NavBar";
+import { Breadcrumb } from "react-bootstrap";
 
 const Login = () => {
   return (
-    <div>
-      <NavBar />
+    <div className="vh-100">
+      <NavBar/>
+      <div>
+      <Breadcrumb className="breadcrumb">
+        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+        <Breadcrumb.Item href="/cart">Cart</Breadcrumb.Item>
+        <Breadcrumb.Item active>Login</Breadcrumb.Item>
+      </Breadcrumb>
+      </div>
       <form
         method="post"
         className="container-fluid py-5 d-flex flex-column flex-wrap justify-content-center align-items-center"

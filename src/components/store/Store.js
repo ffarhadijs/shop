@@ -1,15 +1,23 @@
 import React, { useContext } from "react";
 import { ProductsContext } from "../../contexts/productContextProvider/ProductContextProvider";
+import Slider from "../slider/Slider";
 import NavBar from "../navBar/NavBar";
 import Product from "../product/Product";
-
+import { Breadcrumb } from "react-bootstrap";
 const Store = (props) => {
-  const products = useContext(ProductsContext);
+  const product = useContext(ProductsContext);
+
   return (
     <>
       <NavBar />
-      <div className="container-fluid p-4 d-flex flex-row flex-wrap justify-content-between bg-light py-5">
-        {products.map((product) => (
+      <Slider />
+      <div>
+        <Breadcrumb className="breadcrumb">
+          <Breadcrumb.Item active>Home</Breadcrumb.Item>
+        </Breadcrumb>
+      </div>
+      <div className="store container-fluid p-4 d-flex flex-row flex-wrap justify-content-between py-5">
+        {product.map((product) => (
           <Product key={product.id} productData={product} />
         ))}
       </div>

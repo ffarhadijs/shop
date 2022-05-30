@@ -3,16 +3,23 @@ import { Button } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { ProductsContext } from "../../contexts/productContextProvider/ProductContextProvider";
 import NavBar from "../navBar/NavBar";
+import { Breadcrumb } from "react-bootstrap";
 
 const Detail = (props) => {
   const products = useContext(ProductsContext);
   const id = useParams().id;
   const product = products[id - 1];
   return (
-    <>
+    <div>
       <NavBar />
-      <div className="detail container-fluid bg-light d-flex flex-row flex-wra justify-content-center">
-        <div className="container mx-4 row border rounded p-4 bg-white d-flex flex-row flex-wrap align-items-center">
+      <div>
+        <Breadcrumb className="breadcrumb">
+          <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+          <Breadcrumb.Item active>Detail</Breadcrumb.Item>
+        </Breadcrumb>
+      </div>
+      <div className="detail container-fluid ">
+        <div className="detailbox container mx-auto row border rounded p-4 d-flex flex-row flex-wrap align-items-center">
           <div className="col-12 col-sm-4 px-4">
             <img
               src={product.image}
@@ -29,7 +36,7 @@ const Detail = (props) => {
             </h5>
             <div className="d-flex flex-row flex-wrap justify-content-between">
               <Button variant={"success"} className=" fw-bold">
-                {product.price} ${" "}
+                {product.price} $
               </Button>
               <Link to="/">
                 <Button variant="outline-primary">go back</Button>
@@ -38,7 +45,7 @@ const Detail = (props) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

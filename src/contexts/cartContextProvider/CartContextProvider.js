@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext,useReducer } from "react";
 import { sum } from "../../helpers/functions/sum/sum";
 
 export const CartContext = createContext();
@@ -9,6 +9,7 @@ const initialState = {
   totalPrice: 0,
   checkOut: false,
 };
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "ADD_PRODUCT":
@@ -31,10 +32,10 @@ const reducer = (state, action) => {
     case "REMOVE_PRODUCT":
       const removed = state.selectedProducts.filter(
         (product) => product.id !== action.payLoad.id
-      );
-      return {
-        ...state,
-        selectedProducts: [...removed],
+        );
+        return {
+          ...state,
+          selectedProducts: [...removed],
         ...sum(removed),
       };
     case "INCREASE":
@@ -57,10 +58,10 @@ const reducer = (state, action) => {
       };
     case "CHECKOUT":
       return {
+        checkOut: true,
         selectedProducts: [],
         totalProducts: 0,
         totalPrice: 0,
-        checkOut: true,
       };
     case "CLEARE":
       return {
@@ -69,6 +70,7 @@ const reducer = (state, action) => {
         totalPrice: 0,
         checkOut: false,
       };
+    
     default:
       return state;
   }

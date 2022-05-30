@@ -9,12 +9,9 @@ const NotFound = () => {
         <h1>ERROR 404!</h1>
         <p>PAGE NOT FOUND</p>
         <div>
-
-        <Link to="/">
-          <Button variant="outline-light">
-            home page
-          </Button>
-        </Link>
+          <Link to="/">
+            <Button variant="outline-light">home page</Button>
+          </Link>
         </div>
       </div>
     </div>
